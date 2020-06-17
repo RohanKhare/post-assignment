@@ -22,7 +22,7 @@ class Post extends React.Component{
                     <Tags />
                 </div>
             </div>
-        );
+        )
     }
 }
 export default Post

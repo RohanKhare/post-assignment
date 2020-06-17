@@ -11,10 +11,20 @@ class Tags extends React.Component{
         }
     }
 
+    removeTag = (index) =>{
+        alert(index)   
+        let localTag = this.state.tags;
+        localTag.splice(index,1);
+        this.setState({
+            tags : localTag,
+            counter : this.state.counter - 1
+        })
+    }
+
     appendTag = () =>{
         
         let localTag =this.state.tags
-    localTag.push(<div><input type='text' ></input><button>Remove {this.state.counter}</button></div>)
+        localTag.push(<div><input type='text' ></input><button value={this.state.counter} onClick={(e)=>this.removeTag(e.target.value) }>Remove {this.state.counter}</button></div>)
         this.setState({
             tags : localTag,
             counter : this.state.counter + 1
@@ -29,7 +39,7 @@ class Tags extends React.Component{
                 <div>{this.state.tags}</div>
                 <div className='mainTag'>
                     <input type='text' ></input>
-                    <button onClick={this.appendTag}>Add Another Tag</button>
+                    <button onClick={()=>this.appendTag()}>Add Another Tag</button>
                 </div>
             </div>
         );
