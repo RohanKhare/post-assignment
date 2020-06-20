@@ -5,7 +5,8 @@ class Tags extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            counter : 1
+            counter : 1,
+            tag : ''
         }
     }
     removeTag(btnId){ 
@@ -36,7 +37,8 @@ class Tags extends React.Component{
        
        
     }
-    appendTag = () =>{      
+    appendTag = (inputTag) =>{
+        //document.getElementById('UserInputTag').value = '';  
         var localCounter  = this.state.counter;
 
         var additionalTags = document.getElementById('additionalTags');
@@ -46,12 +48,13 @@ class Tags extends React.Component{
         //input box
         var input  = document.createElement("input");
         input.setAttribute("type","texts");
+        input.setAttribute("value",inputTag)
         childElement.appendChild(input);
 
         
         //Button
         var btn  = document.createElement("button");
-        btn.innerHTML = 'REMOVE'+localCounter;
+        btn.innerHTML = 'REMOVE';
         btn.setAttribute("id","btn"+localCounter);
         //Appending elemnts
         childElement.appendChild(btn);
@@ -63,20 +66,31 @@ class Tags extends React.Component{
 
         
         this.setState({
+            tag : '',
             counter : this.state.counter + 1
         })       
     }
 
+    handleChange = (event) =>{
+        this.setState({
+            tag : event.target.value
+        });
+    }
+    clearText = () =>{
+    
+    }
     render(){
         return(
             <div>
-                Tags :
-                <span>
-                <ul id='additionalTags'>
+            Tags:
+            <div>            
+                <ul id='additionalTags' style={{listStyleType :'none'}}>
                 </ul>
-                </span>
-                <input type='text' ></input>
-                <button onClick={this.appendTag}>Add Another Tag</button>
+                <div style={{paddingLeft:40}}>
+                    <input id='UserInputTag' type='text' value={this.state.tag} onChange={(e) => {this.handleChange(e)}}></input>
+                    <button onClick={()=>{this.appendTag(this.state.tag)}}>Add Another Tag</button>
+                </div>
+            </div>
             </div>
         );
     }
