@@ -79,16 +79,19 @@ class Tags extends React.Component{
     }
     render(){
         return(
-            <div className='tagsContainer' style={{float:'left'}}>
-                Tags:
-                           
+            <div className='tagsContainer' >
+                    <div style={{float:'left'}}>
+                        Tags:
+                    </div>
+                    <div>                           
                     <ul id='additionalTags' style={{listStyleType :'none'}}>
                     </ul>
+                    </div>
                     <div style={{paddingLeft:40}}>
                         <input id='UserInputTag' type='text' value={this.state.tag} onChange={(e) => {this.handleChange(e)}}></input>
                         <button onClick={()=>{this.appendTag(this.state.tag)}}>Add Another Tag</button>
                     
-                </div>
+                    </div>
             </div>
         );
     }
