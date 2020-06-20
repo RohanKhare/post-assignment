@@ -8,7 +8,7 @@ class Title extends React.Component{
 
     render(){
         return(
-            <div className='titleComponent'>
+            <div className='titleContainer'>
                 <label>Title : </label>
                 <input type='text' value=''></input>
             </div>

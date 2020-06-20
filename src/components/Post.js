@@ -13,7 +13,7 @@ class Post extends React.Component{
         return(
             <div className='postComponent'>
                 <div>
-                <Title />
+                    <Title />
                 </div>
                 <div>
                     <Body />

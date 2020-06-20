@@ -34,8 +34,6 @@ class Tags extends React.Component{
             }
             additionalTagId.removeChild(additionalTagId.childNodes[index]);            
        }
-       
-       
     }
     appendTag = (inputTag) =>{
         //document.getElementById('UserInputTag').value = '';  
@@ -81,16 +79,16 @@ class Tags extends React.Component{
     }
     render(){
         return(
-            <div>
-            Tags:
-            <div>            
-                <ul id='additionalTags' style={{listStyleType :'none'}}>
-                </ul>
-                <div style={{paddingLeft:40}}>
-                    <input id='UserInputTag' type='text' value={this.state.tag} onChange={(e) => {this.handleChange(e)}}></input>
-                    <button onClick={()=>{this.appendTag(this.state.tag)}}>Add Another Tag</button>
+            <div className='tagsContainer' style={{float:'left'}}>
+                Tags:
+                           
+                    <ul id='additionalTags' style={{listStyleType :'none'}}>
+                    </ul>
+                    <div style={{paddingLeft:40}}>
+                        <input id='UserInputTag' type='text' value={this.state.tag} onChange={(e) => {this.handleChange(e)}}></input>
+                        <button onClick={()=>{this.appendTag(this.state.tag)}}>Add Another Tag</button>
+                    
                 </div>
-            </div>
             </div>
         );
     }

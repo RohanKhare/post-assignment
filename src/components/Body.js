@@ -8,10 +8,14 @@ class Body extends React.Component{
 
     render(){
         return(
-            <div className='bodyComponent'>
+            <div className='bodyContainer'>
+                <div  style={{float:'left'}}>
                 <label>Body : </label>
+                </div>
+                <div>
                 <textarea rows='10'></textarea>
-            </div>
+                </div>
+           </div>
         );
     }
 }
