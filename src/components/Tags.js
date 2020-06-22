@@ -14,16 +14,12 @@ class Tags extends React.Component{
     render(){
         return(
             <div className='tagsContainer' >
-                    <div >
+                    <div style={{float:'left'}}>
                             Tags:
                     </div>
-                    <div style={{float:'left'}}>
-                        <div style={{paddingLeft:40}}>
-                            <OriginalTag onClick={this.appendTag}/>
-                        </div>
-
-                    </div>
-                    
+                    <div>
+                            <OriginalTag />
+                    </div>         
             </div>
         );
     }

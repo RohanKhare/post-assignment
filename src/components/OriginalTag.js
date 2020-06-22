@@ -21,11 +21,14 @@ class OriginalTag extends React.Component{
 //inputTag={this.state.tag}
     render(){
         return(
-            <React.Fragment >
+            <div>
                 <RemovableTag ref='removableTag' />
+                <div style={{paddingLeft:40}}>
                 <input type='text' value={this.state.tag} onChange={(e) => {this.handleChange(e)}}></input>
                 <button onClick={()=>{this.callAppendTag(this.state.tag);this.setState({tag:''})}}>Add Another Tag</button>
-            </React.Fragment>
+                </div>
+                
+            </div>
         );
     }
 

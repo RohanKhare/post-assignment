@@ -72,10 +72,8 @@ class RemovableTag extends React.Component{
     render(){
         //this.appendElement(this.props.inputTag);
         return(
-            <div>
                 <ul id='additionalTags' style={{listStyleType :'none'}}>
                 </ul>
-            </div>
         );
     }
 }
