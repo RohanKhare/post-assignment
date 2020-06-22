@@ -4,7 +4,6 @@ class RemovableTag extends React.Component{
 
     constructor(props){
         super(props)
-
         this.state ={
             counter : 1
         }
@@ -70,7 +69,6 @@ class RemovableTag extends React.Component{
 
 
     render(){
-        //this.appendElement(this.props.inputTag);
         return(
                 <ul id='additionalTags' style={{listStyleType :'none'}}>
                 </ul>
@@ -78,18 +76,3 @@ class RemovableTag extends React.Component{
     }
 }
 export default RemovableTag
-
-
-
-// getRemovableTag =(inputTag) =>{
-//     return(
-//         <RemovableTag inputTag={inputTag} onClick={this.removeTag} />
-//     );
-// }
-// appendTag = (inputTag) =>{
-//     let additionalTags = document.getElementById('additionalTags');
-    
-//    let childElement = this.getRemovableTag(inputTag);
-   
-//     additionalTags.append({childElement});
-// }

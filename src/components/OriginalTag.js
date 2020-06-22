@@ -14,11 +14,9 @@ class OriginalTag extends React.Component{
             tag : event.target.value
         });
     }
-
     callAppendTag = (tag) =>{
         this.refs.removableTag.appendElement(tag);
     }
-//inputTag={this.state.tag}
     render(){
         return(
             <div>
